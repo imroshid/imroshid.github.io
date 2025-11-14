@@ -1,74 +1,46 @@
-/* Global Style */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8f9fa;
-    color: #333;
+/* About Page */
+.about {
+    padding: 80px 20px;
 }
 
-/* Navbar */
-nav {
+.about-container {
+    max-width: 900px;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
-    background: white;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-nav .site-title {
-    font-size: 26px;
-    font-weight: bold;
-    color: #222;
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-    color: #007bff;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 150px 20px;
-    background: linear-gradient(to right, #007bff, #00b7ff);
-    color: white;
-}
-
-.hero h1 {
-    font-size: 48px;
+.about-text h1 {
+    font-size: 36px;
     margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 20px;
-    opacity: 0.9;
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background: #f1f1f1;
-    color: #555;
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #007bff;
+    color: white;
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 20px;
     font-size: 14px;
 }
 
