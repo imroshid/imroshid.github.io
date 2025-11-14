@@ -492,5 +492,33 @@ footer.dark {
         font-size: 1.1em;
     }
 }
+/* Footer Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.footer-social .social-icon {
+    font-size: 22px;
+    color: var(--text-color, #333);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    transform: scale(1.2);
+    color: var(--accent-color, #0077ff);
+}
+
+/* Dark mode support */
+.dark .footer-social .social-icon {
+    color: #ddd;
+}
+
+.dark .footer-social .social-icon:hover {
+    color: #4da3ff;
+}
 
 
