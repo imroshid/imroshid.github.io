@@ -51,10 +51,26 @@
 
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© Mamunur Rashid 2025</p>
-    </footer>
+<footer>
+    <p class="copy">
+        <small>
+            © <span id="year"></span> Mamunur Rashid |
+            Powered by GitHub • 
+            Last updated on <span id="last-updated"></span>
+        </small>
+    </p>
+</footer>
+
+<script>
+    // Auto YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Auto LAST UPDATED (gets actual file modification date)
+    const updated = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    document.getElementById("last-updated").textContent =
+        updated.toLocaleDateString('en-US', options);
+</script>
 
     <!-- Dark Mode Script -->
     <script>

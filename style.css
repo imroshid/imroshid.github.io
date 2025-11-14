@@ -227,3 +227,18 @@ body.dark ul li {
 .hero.dark p {
     color: #cccccc;
 }
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+footer.dark {
+    color: #ddd;
+}
+
+.copy small {
+    opacity: 0.8;
+}
