@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Projects | Rashid</title>
+    <meta name="viewport" content="width=device-width">
+    <title>Projects | Mamunur Rashid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,74 +12,73 @@
     <!-- Dark Mode Toggle -->
     <div id="dark-toggle">🌙</div>
 
-    <!-- Header Navigation -->
+    <!-- Header -->
     <header>
         <h1>Mamunur Rashid</h1>
 
-    <div class="hamburger" id="hamburger">☰</div>
+        <div class="hamburger" id="hamburger">☰</div>
 
-    <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="research.html">Research</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Page Content -->
-    <section class="content-section">
+    <!-- CONTENT -->
+    <section class="content-section fade-in">
         <h1>My Projects</h1>
 
-        <!-- Project 1 -->
         <div class="card">
             <h2>Machine Learning Classification Model</h2>
-            <p>Developed a predictive ML model using Python and Scikit-Learn
-            to classify datasets with high accuracy.</p>
-            <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
+            <p>ML model using Scikit-Learn with high accuracy for predictive tasks.</p>
+            <a href="https://github.com/imroshid" target="_blank" class="btn">View Project</a>
         </div>
 
-        <!-- Project 2 -->
         <div class="card">
             <h2>Deep Learning Image Recognition</h2>
-            <p>Designed a CNN model using TensorFlow/Keras for image classification tasks.</p>
-            <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
+            <p>CNN built using TensorFlow/Keras for image classification tasks.</p>
+            <a href="https://github.com/imroshid" target="_blank" class="btn">View Project</a>
         </div>
 
-        <!-- Project 3 -->
         <div class="card">
             <h2>Web Development Portfolio Website</h2>
-            <p>A personal portfolio website created using HTML, CSS, GitHub Pages, and responsive design techniques.</p>
-            <a href="https://imroshid.github.io" class="btn" target="_blank">Live Demo</a>
+            <p>A full personal website built using HTML, CSS, animations & GitHub Pages hosting.</p>
+            <a href="https://imroshid.github.io" target="_blank" class="btn">Live Demo</a>
         </div>
-
     </section>
 
-    <!-- Dark Mode Script -->
+    <!-- Footer -->
+    <footer>
+        <p class="copy">
+            <small>
+                © <span id="year"></span> Mamunur Rashid |
+                Powered by GitHub • Last updated on <span id="last-updated"></span>
+            </small>
+        </p>
+    </footer>
+
+    <!-- Dark Mode -->
     <script>
         const body = document.body;
         const toggle = document.getElementById("dark-toggle");
 
         const applyDarkMode = (on) => {
             const method = on ? "add" : "remove";
-
-            // Body background + global text
             body.classList[method]("dark");
 
-            // All dark-enabled elements
             document.querySelectorAll(
-                "header, footer, section, nav a, .pub-card, .pub-title, .pub-authors, .pub-info, .pub-links a, .social-links a"
+                "header, footer, nav, nav a, section, .card"
             ).forEach(el => el.classList[method]("dark"));
 
-            // Change icon
             toggle.textContent = on ? "☀️" : "🌙";
         };
 
-        // Load saved mode
-        const stored = localStorage.getItem("dark-mode") === "on";
-        applyDarkMode(stored);
+        const saved = localStorage.getItem("dark-mode") === "on";
+        applyDarkMode(saved);
 
-        // Toggle handler
         toggle.addEventListener("click", () => {
             const isDark = body.classList.contains("dark");
             applyDarkMode(!isDark);
@@ -86,44 +86,27 @@
         });
     </script>
 
+    <!-- Hamburger -->
     <script>
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("nav-menu");
 
-    // Toggle menu
-    hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-    });
-
-    // Close menu when clicking a link (mobile only)
-    document.querySelectorAll("#nav-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("open");
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("open");
         });
-    });
-</script>
 
+        document.querySelectorAll("#nav-menu a").forEach(link => {
+            link.addEventListener("click", () => navMenu.classList.remove("open"));
+        });
+    </script>
 
-     <footer>
-    <p class="copy">
-        <small>
-            © <span id="year"></span> Mamunur Rashid |
-            Powered by GitHub • 
-            Last updated on <span id="last-updated"></span>
-        </small>
-    </p>
-</footer>
-
-<script>
-    // Auto YEAR
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Auto LAST UPDATED (gets actual file modification date)
-    const updated = new Date(document.lastModified);
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    document.getElementById("last-updated").textContent =
-        updated.toLocaleDateString('en-US', options);
-</script>
+    <!-- Auto Footer Date -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const updated = new Date(document.lastModified);
+        document.getElementById("last-updated").textContent =
+            updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+    </script>
 
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact | Rashid</title>
+    <meta name="viewport" content="width=device-width">
+    <title>Contact | Mamunur Rashid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,71 +12,73 @@
     <!-- Dark Mode Toggle -->
     <div id="dark-toggle">🌙</div>
 
-    <!-- Header Navigation -->
+    <!-- Header -->
     <header>
         <h1>Mamunur Rashid</h1>
 
-    <div class="hamburger" id="hamburger">☰</div>
+        <div class="hamburger" id="hamburger">☰</div>
 
-    <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="research.html">Research</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Page Content -->
-    <section class="content-section">
+    <!-- CONTENT -->
+    <section class="content-section fade-in">
         <h1>Contact Me</h1>
-        <p>If you want to collaborate, ask a question, or discuss research — feel free to reach out.</p>
+        <p>Feel free to reach out for collaborations, research, or professional inquiries.</p>
 
         <div class="card">
             <h2>Email</h2>
-            <p>You can contact me directly:</p>
             <p><strong>mrrashid.cs@gmail.com</strong></p>
-            <a href="mailto:mrrashid.cs@gmail.com" class="btn">Send Email</a>
+            <a class="btn" href="mailto:mrrashid.cs@gmail.com">Send Email</a>
         </div>
 
         <div class="card">
-            <h2>Connect With Me</h2>
+            <h2>Social Links</h2>
             <ul>
                 <li><a href="https://github.com/imroshid" target="_blank">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></li>
+                <li><a href="https://linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></li>
                 <li><a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a></li>
-                <li><a href="https://www.researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></li>
+                <li><a href="https://researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></li>
                 <li><a href="https://instagram.com/imroshid" target="_blank">Instagram</a></li>
             </ul>
         </div>
-
     </section>
 
-    <!-- Dark Mode Script -->
+    <!-- Footer -->
+    <footer>
+        <p class="copy">
+            <small>
+                © <span id="year"></span> Mamunur Rashid |
+                Powered by GitHub • Last updated on <span id="last-updated"></span>
+            </small>
+        </p>
+    </footer>
+
+    <!-- Dark Mode -->
     <script>
         const body = document.body;
         const toggle = document.getElementById("dark-toggle");
 
         const applyDarkMode = (on) => {
             const method = on ? "add" : "remove";
-
-            // Body background + global text
             body.classList[method]("dark");
 
-            // All dark-enabled elements
             document.querySelectorAll(
-                "header, footer, section, nav a, .pub-card, .pub-title, .pub-authors, .pub-info, .pub-links a, .social-links a"
+                "header, footer, nav, nav a, .card, section"
             ).forEach(el => el.classList[method]("dark"));
 
-            // Change icon
             toggle.textContent = on ? "☀️" : "🌙";
         };
 
-        // Load saved mode
-        const stored = localStorage.getItem("dark-mode") === "on";
-        applyDarkMode(stored);
+        const saved = localStorage.getItem("dark-mode") === "on";
+        applyDarkMode(saved);
 
-        // Toggle handler
         toggle.addEventListener("click", () => {
             const isDark = body.classList.contains("dark");
             applyDarkMode(!isDark);
@@ -83,43 +86,27 @@
         });
     </script>
 
+    <!-- Hamburger -->
     <script>
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("nav-menu");
 
-    // Toggle menu
-    hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-    });
-
-    // Close menu when clicking a link (mobile only)
-    document.querySelectorAll("#nav-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("open");
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("open");
         });
-    });
-</script>
 
- <footer>
-    <p class="copy">
-        <small>
-            © <span id="year"></span> Mamunur Rashid |
-            Powered by GitHub • 
-            Last updated on <span id="last-updated"></span>
-        </small>
-    </p>
-</footer>
+        document.querySelectorAll("#nav-menu a").forEach(link => {
+            link.addEventListener("click", () => navMenu.classList.remove("open"));
+        });
+    </script>
 
-<script>
-    // Auto YEAR
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Auto LAST UPDATED (gets actual file modification date)
-    const updated = new Date(document.lastModified);
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    document.getElementById("last-updated").textContent =
-        updated.toLocaleDateString('en-US', options);
-</script>
+    <!-- Auto Footer Date -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const updated = new Date(document.lastModified);
+        document.getElementById("last-updated").textContent =
+            updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+    </script>
 
 </body>
 </html>
