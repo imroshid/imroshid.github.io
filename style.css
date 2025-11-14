@@ -140,6 +140,12 @@ nav a.dark:hover {
     color: #bbff99;
 }
 
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #4CAF50;
+}
+
+
 /* Social links */
 .social-links a.dark {
     color: #b3e5fc;
