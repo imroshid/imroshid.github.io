@@ -1,51 +1,115 @@
-/* -----------------------------------
-   HERO SECTION WITH PROFILE PHOTO
------------------------------------ */
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.hero {
-    width: 80%;
-    margin: 80px auto;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #333;
+}
+
+/* NAVIGATION BAR */
+nav {
+    width: 100%;
+    padding: 20px 40px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-.profile-photo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 100%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.hero-text {
-    max-width: 500px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.hero-text h1 {
+nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #007bff;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 140px 20px;
+    background: white;
+}
+
+.hero h1 {
     font-size: 48px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #111;
 }
 
-.hero-text p {
-    color: #555;
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.5;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #444;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
-    padding: 12px 25px;
-    border-radius: 6px;
-    background: #0078ff;
+    padding: 12px 28px;
+    background: #007bff;
     color: white;
-    font-weight: bold;
+    border-radius: 6px;
     text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    background: #005fcc;
+    background: #0056b3;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a svg {
+    width: 28px;
+    height: 28px;
+    fill: #333;
+    transition: 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill: #007bff;
+    transform: scale(1.15);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
 }
 
