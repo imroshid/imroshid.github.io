@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rashid | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1 class="site-title">Rashid</h1>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>Hello, I’m Rashid</h1>
+    <p>Welcome to my professional portfolio.</p>
+</header>
+
+<footer class="footer">
+    <p>© Rashid 2025</p>
+</footer>
+
+</body>
+</html>
