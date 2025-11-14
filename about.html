@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <title>About | Rashid</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+</head>  
+    <script>
+    const body = document.body;
+    const toggle = document.getElementById("dark-toggle");
+
+    const applyDarkMode = (on) => {
+        const method = on ? "add" : "remove";
+
+        // Body background + global text
+        body.classList[method]("dark");
+
+        // Header, footer, sections, publication cards, nav links, etc.
+        document.querySelectorAll(
+            "header, footer, section, nav a, .pub-card, .pub-title, .pub-authors, .pub-info, .pub-links a, .social-links a"
+        ).forEach(el => el.classList[method]("dark"));
+
+        // Change icon
+        toggle.textContent = on ? "☀️" : "🌙";
+    };
+
+    // Load stored preference
+    const stored = localStorage.getItem("dark-mode") === "on";
+    applyDarkMode(stored);
+
+    // Toggle button click
+    toggle.addEventListener("click", () => {
+        const currentlyDark = body.classList.contains("dark");
+        applyDarkMode(!currentlyDark);
+        localStorage.setItem("dark-mode", !currentlyDark ? "on" : "off");
+    });
+</script>
+
+<body> 
+
+    <div id="dark-toggle">🌙</div>
 
     <nav>
         <h2 class="logo">Rashid</h2>
