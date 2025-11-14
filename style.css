@@ -337,3 +337,160 @@ footer.dark {
     }
 }
 
+/* ============================
+   HAMBURGER MENU
+   ============================ */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mobile Menu Hidden by Default */
+#nav-menu {
+    transition: max-height 0.3s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav.dark {
+        background: #111;
+        border-bottom: 1px solid #333;
+    }
+
+    nav a {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        margin: 0;
+    }
+
+    nav a.dark {
+        border-bottom: 1px solid #222;
+    }
+
+    /* Expanded state */
+    nav.open {
+        max-height: 300px;
+    }
+}
+/* ======================
+   IMPROVED HOMEPAGE HERO
+   ====================== */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Highlight Text */
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Social Links Improved */
+.social-links a {
+    margin: 5px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #f1f1f1;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #e2e2e2;
+    transform: translateY(-2px);
+}
+
+/* Dark Mode Adjustments */
+.dark .highlight {
+    color: #4da3ff;
+}
+
+.dark .social-links a {
+    background: #222;
+    color: #ddd;
+}
+
+.dark .social-links a:hover {
+    background: #333;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+}
+
+

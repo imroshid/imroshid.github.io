@@ -14,14 +14,17 @@
     <!-- Header Navigation -->
     <header>
         <h1>Mamunur Rashid</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
     <!-- Page Content -->
     <section class="content-section">
@@ -80,7 +83,24 @@
         });
     </script>
 
-    <footer>
+    <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    // Toggle menu
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+    });
+
+    // Close menu when clicking a link (mobile only)
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+        });
+    });
+</script>
+
+ <footer>
     <p class="copy">
         <small>
             © <span id="year"></span> Mamunur Rashid |

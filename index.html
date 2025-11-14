@@ -15,20 +15,24 @@
     <!-- Header -->
     <header>
         <h1>Mamunur Rashid</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <img src="Moon.png" alt="Rashid Photo" class="profile-pic">
-        <h2>Hello, I'm Rashid</h2>
-        <p>Welcome to my professional portfolio.</p>
+<section class="hero">
+    <div class="hero-content fade-in">
+        <img src="Moon.png" alt="Rashid Photo" class="profile-pic float">
+        <h2>Hello, I'm <span class="highlight">Rashid</span></h2>
+        <p class="subtitle">Researcher • Developer • ML Enthusiast</p>
 
         <div class="social-links">
             <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a>
@@ -37,7 +41,8 @@
             <a href="https://www.linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a>
             <a href="https://instagram.com/imroshid" target="_blank">Instagram</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Dark Mode Script -->
     <script>
@@ -70,8 +75,25 @@
             localStorage.setItem("dark-mode", !isDark ? "on" : "off");
         });
     </script>
+    
+    <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
- <footer>
+    // Toggle menu
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+    });
+
+    // Close menu when clicking a link (mobile only)
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+        });
+    });
+</script>
+
+<footer>
     <p class="copy">
         <small>
             © <span id="year"></span> Mamunur Rashid |
