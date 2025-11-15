@@ -18,18 +18,22 @@
     <div id="dark-toggle">🌙</div>
 
     <!-- Header -->
-    <header>
-        <h1>Mamunur Rashid</h1>
-        <div class="hamburger" id="hamburger">☰</div>
+<header>
+    <h1>Mamunur Rashid</h1>
 
-        <nav id="nav-menu">
-            <a class="active" href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
 
     <!-- Hero -->
     <section class="hero fade-in">
@@ -83,18 +87,22 @@
     </script>
 
     <!-- Hamburger Script -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("nav-menu");
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("open");
-        });
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+    });
 
-        document.querySelectorAll("#nav-menu a").forEach(link => {
-            link.addEventListener("click", () => navMenu.classList.remove("open"));
+    // Close menu after clicking a link
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
         });
-    </script>
+    });
+</script>
+
 
     <!-- Footer Date Script -->
     <script>

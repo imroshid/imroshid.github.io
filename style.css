@@ -338,3 +338,36 @@ body.dark #dark-toggle {
         width: 95%;
     }
 }
+/* Ensure nav sits above hero */
+nav {
+    z-index: 9999;
+}
+
+/* MOBILE: hide menu initially */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: var(--bg-light);
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 2px solid var(--accent);
+        text-align: center;
+    }
+
+    nav.dark {
+        background: #111;
+    }
+
+    /* When open: show menu */
+    nav.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-right: 10px;
+        z-index: 10000;
+    }
+}
