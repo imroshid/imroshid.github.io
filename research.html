@@ -14,113 +14,90 @@
 
 <body>
 
-<div id="dark-toggle">🌙</div>
+    <div id="dark-toggle">🌙</div>
 
-<header>
-    <h1>Mamunur Rashid</h1>
-    <div class="hamburger" id="hamburger">☰</div>
+    <header>
+        <h1>Mamunur Rashid</h1>
+        <div class="hamburger" id="hamburger">☰</div>
 
-    <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a class="active" href="research.html">Research</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<section class="content-section fade-in">
+    <section class="content-section">
+        <h1 style="text-align:center;">Research Publications</h1>
 
-    <h1>Research Publications</h1>
+        <!-- ONE CARD EXAMPLE (repeat for all papers) -->
+        <div class="pub-card">
+            <div class="pub-title">Neural Network–Based Image Recognition System</div>
+            <div class="pub-authors">M. Rashid, et al.</div>
 
-    <!-- Example Publication 1 -->
-    <div class="pub-card">
-        <div class="pub-title">Performance Analysis of Machine Learning Algorithms for Image Classification</div>
-        <div class="pub-authors">Mamunur Rashid, et al.</div>
+            <div class="pub-info">
+                Conference on Computer Vision — 2024
+            </div>
 
-        <div class="pub-info">
-            <strong>Published:</strong> 2024<br>
-            <strong>Conference:</strong> International Journal of Computer Science
+            <div class="pub-links">
+                <a href="#" target="_blank">PDF</a>
+                <a href="#" target="_blank">DOI</a>
+                <a href="#" target="_blank">Publisher</a>
+            </div>
         </div>
 
-        <div class="pub-links">
-            <a href="#" target="_blank">PDF</a>
-            <a href="#" target="_blank">DOI</a>
-            <a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a>
-        </div>
-    </div>
+        <!-- Add more publication blocks below: -->
+        <!-- I will expand all your papers later if you want -->
 
-    <!-- Example Publication 2 -->
-    <div class="pub-card">
-        <div class="pub-title">Deep Learning-Based Real-Time Disease Detection</div>
-        <div class="pub-authors">Mamunur Rashid, et al.</div>
+    </section>
 
-        <div class="pub-info">
-            <strong>Published:</strong> 2023<br>
-            <strong>Journal:</strong> Applied Artificial Intelligence
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social">
+            <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
+            <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
+            <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
+            <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
         </div>
 
-        <div class="pub-links">
-            <a href="#" target="_blank">PDF</a>
-            <a href="#" target="_blank">DOI</a>
-            <a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a>
-        </div>
-    </div>
+        <p class="copy">
+            <small>© <span id="year"></span> Mamunur Rashid | Powered by GitHub • Last updated <span id="last-updated"></span></small>
+        </p>
+    </footer>
 
-    <!-- Add more publications as needed -->
-</section>
+    <!-- Scripts -->
+    <script>
+        const body = document.body;
+        const toggle = document.getElementById("dark-toggle");
+        const applyDark = (on) => {
+            const method = on ? "add" : "remove";
+            body.classList[method]("dark");
+            document.querySelectorAll("header, nav, nav a, footer, .card, .pub-card")
+                .forEach(el => el.classList[method]("dark"));
+            toggle.textContent = on ? "☀️" : "🌙";
+        };
+        const saved = localStorage.getItem("dark-mode") === "on";
+        applyDark(saved);
+        toggle.onclick = () => {
+            const now = !body.classList.contains("dark");
+            applyDark(now);
+            localStorage.setItem("dark-mode", now ? "on" : "off");
+        };
+    </script>
 
-<footer>
-    <div class="footer-social">
-        <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-        <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
-        <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
-        <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
-        <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
-    </div>
+    <script>
+        document.getElementById("hamburger").onclick = () =>
+            document.getElementById("nav-menu").classList.toggle("open");
+    </script>
 
-    <p class="copy">
-        <small>
-            © <span id="year"></span> Mamunur Rashid |
-            Powered by GitHub • Last updated on <span id="last-updated"></span>
-        </small>
-    </p>
-</footer>
-
-<script>
-    const body = document.body;
-    const toggle = document.getElementById("dark-toggle");
-
-    const applyDark = (on) => {
-        const m = on ? "add" : "remove";
-        body.classList[m]("dark");
-        document.querySelectorAll("header, footer, nav, nav a, section, .card, .pub-card")
-              .forEach(e => e.classList[m]("dark"));
-        toggle.textContent = on ? "☀️" : "🌙";
-    };
-
-    const saved = localStorage.getItem("dark-mode") === "on";
-    applyDark(saved);
-
-    toggle.addEventListener("click", () => {
-        const d = body.classList.contains("dark");
-        applyDark(!d);
-        localStorage.setItem("dark-mode", !d ? "on" : "off");
-    });
-
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
-
-    hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
-    document.querySelectorAll("#nav-menu a").forEach(a =>
-        a.addEventListener("click", () => navMenu.classList.remove("open"))
-    );
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const updated = new Date(document.lastModified);
-    document.getElementById("last-updated").textContent =
-        updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
-</script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("last-updated").textContent =
+            new Date(document.lastModified).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+    </script>
 
 </body>
 </html>

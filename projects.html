@@ -7,100 +7,94 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="dark-toggle">🌙</div>
+    <div id="dark-toggle">🌙</div>
 
-<header>
-    <h1>Mamunur Rashid</h1>
-    <div class="hamburger" id="hamburger">☰</div>
+    <header>
+        <h1>Mamunur Rashid</h1>
+        <div class="hamburger" id="hamburger">☰</div>
 
-    <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a class="active" href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a class="active" href="projects.html">Projects</a>
+            <a href="research.html">Research</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<section class="content-section fade-in">
-    <h1>My Projects</h1>
+    <section class="content-section">
+        <h1 style="text-align:center;">Projects</h1>
 
-    <div class="card">
-        <h2>Machine Learning Classification Model</h2>
-        <p>Built predictive ML model using Scikit-Learn for high-accuracy classification.</p>
-        <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
-    </div>
+        <div class="card">
+            <h2>Machine Learning Classification Model</h2>
+            <p>Built a predictive ML model using Python and Scikit-Learn.</p>
+            <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
+        </div>
 
-    <div class="card">
-        <h2>Deep Learning Image Recognition</h2>
-        <p>Developed CNN models using TensorFlow/Keras for image recognition tasks.</p>
-        <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
-    </div>
+        <div class="card">
+            <h2>Deep Learning Image Recognition</h2>
+            <p>Designed a CNN using TensorFlow/Keras for image classification.</p>
+            <a href="https://github.com/imroshid" class="btn" target="_blank">View Project</a>
+        </div>
 
-    <div class="card">
-        <h2>Portfolio Website</h2>
-        <p>Designed and deployed this portfolio using GitHub Pages.</p>
-        <a href="https://imroshid.github.io" class="btn" target="_blank">Live Demo</a>
-    </div>
+        <div class="card">
+            <h2>Portfolio Website</h2>
+            <p>A custom-built personal portfolio hosted on GitHub Pages.</p>
+            <a href="https://imroshid.github.io" class="btn" target="_blank">Live Demo</a>
+        </div>
+    </section>
 
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social">
+            <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
+            <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
+            <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
+            <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
+        </div>
 
-<footer>
-    <div class="footer-social">
-        <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-        <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
-        <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
-        <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
-        <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
-    </div>
+        <p class="copy">
+            <small>© <span id="year"></span> Mamunur Rashid | Powered by GitHub • Last updated <span id="last-updated"></span></small>
+        </p>
+    </footer>
 
-    <p class="copy">
-        <small>
-            © <span id="year"></span> Mamunur Rashid |
-            Powered by GitHub • Last updated on <span id="last-updated"></span>
-        </small>
-    </p>
-</footer>
+    <!-- Scripts -->
+    <script>
+        const body = document.body;
+        const toggle = document.getElementById("dark-toggle");
+        const applyDark = (on) => {
+            const method = on ? "add" : "remove";
+            body.classList[method]("dark");
+            document.querySelectorAll("header, nav, nav a, footer, .card")
+                .forEach(el => el.classList[method]("dark"));
+            toggle.textContent = on ? "☀️" : "🌙";
+        };
+        const saved = localStorage.getItem("dark-mode") === "on";
+        applyDark(saved);
+        toggle.onclick = () => {
+            const now = !body.classList.contains("dark");
+            applyDark(now);
+            localStorage.setItem("dark-mode", now ? "on" : "off");
+        };
+    </script>
 
-<script>
-    const body = document.body;
-    const toggle = document.getElementById("dark-toggle");
+    <script>
+        document.getElementById("hamburger").onclick = () =>
+            document.getElementById("nav-menu").classList.toggle("open");
+    </script>
 
-    const applyDark = (on) => {
-        const m = on ? "add" : "remove";
-        body.classList[m]("dark");
-        document.querySelectorAll("header, footer, nav, nav a, section, .card")
-              .forEach(e => e.classList[m]("dark"));
-        toggle.textContent = on ? "☀️" : "🌙";
-    };
-
-    const saved = localStorage.getItem("dark-mode") === "on";
-    applyDark(saved);
-
-    toggle.addEventListener("click", () => {
-        const d = body.classList.contains("dark");
-        applyDark(!d);
-        localStorage.setItem("dark-mode", !d ? "on" : "off");
-    });
-
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
-
-    hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
-    document.querySelectorAll("#nav-menu a").forEach(a =>
-        a.addEventListener("click", () => navMenu.classList.remove("open"))
-    );
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const updated = new Date(document.lastModified);
-    document.getElementById("last-updated").textContent =
-        updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
-</script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("last-updated").textContent =
+            new Date(document.lastModified).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+    </script>
 
 </body>
 </html>
