@@ -1,5 +1,4 @@
 /* --- Publication Card Styling --- */
-
 .pub-card {
     background: #ffffff;
     padding: 18px 22px;
@@ -41,10 +40,10 @@
 .pub-links a:hover {
     text-decoration: underline;
 }
+
 /* ------------------------- */
 /* DARK MODE BASE STYLES     */
 /* ------------------------- */
-
 body.dark {
     background: #121212;
     color: #e5e5e5;
@@ -70,8 +69,7 @@ nav a.dark {
     box-shadow: 0 6px 15px rgba(0,0,0,0.55);
 }
 
-/* Dark mode toggle button */
-
+/* Dark mode toggle */
 #dark-toggle {
     position: fixed;
     top: 20px;
@@ -94,18 +92,13 @@ body.dark #dark-toggle {
     background: #1e1e1e;
     color: #ffd54f;
 }
-/* ---------------------------------------- */
-/* EXTENDED DARK MODE — GLOBAL ELEMENTS     */
-/* ---------------------------------------- */
 
-/* Background + global text */
+/* Extended Dark Mode */
 body.dark {
     background: #0f0f0f;
     color: #efefef;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Headers, sections */
 header.dark {
     background: #1a1a1a;
     color: #e6e6e6;
@@ -117,23 +110,16 @@ section.dark {
     color: #e6e6e6;
 }
 
-/* Footer */
 footer.dark {
     background: #1a1a1a;
     color: #cfcfcf;
     border-top: 1px solid #333;
 }
 
-/* Headings */
 body.dark h1,
 body.dark h2,
 body.dark h3 {
     color: #fafafa;
-}
-
-/* Navigation links */
-nav a.dark {
-    color: #e0e0e0;
 }
 
 nav a.dark:hover {
@@ -145,20 +131,7 @@ nav a.active {
     border-bottom: 2px solid #4CAF50;
 }
 
-
-/* Social links */
-.social-links a.dark {
-    color: #b3e5fc;
-}
-
-.social-links a.dark:hover {
-    color: #80d4ff;
-}
-
-/* ---------------------------------------- */
-/* BUTTONS & INTERACTIVE ELEMENTS           */
-/* ---------------------------------------- */
-
+/* Buttons & Inputs */
 button.dark,
 input.dark[type="submit"] {
     background: #222;
@@ -172,21 +145,7 @@ input.dark[type="submit"]:hover {
     border-color: #888;
 }
 
-/* ---------------------------------------- */
-/* PUBLICATION CARDS                        */
-/* ---------------------------------------- */
-
-.pub-card.dark {
-    background: #1e1e1e;
-    border-left-color: #8bc34a;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-.pub-card.dark:hover {
-    border-left-color: #a5d66a;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-}
-
+/* Publication Cards - Part 2 */
 .pub-title.dark {
     color: #fafafa;
 }
@@ -207,197 +166,11 @@ input.dark[type="submit"]:hover {
     color: #29b6f6;
 }
 
-/* ---------------------------------------- */
-/* LIST ITEMS                               */
-/* ---------------------------------------- */
-
 body.dark ul li {
     color: #dcdcdc;
 }
 
-/* ---------------------------------------- */
-/* HERO SECTION                              */
-/* ---------------------------------------- */
-
-.hero.dark {
-    background: none;
-    color: #e8e8e8;
-}
-
-.hero.dark p {
-    color: #cccccc;
-}
-footer {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #444;
-}
-
-footer.dark {
-    color: #ddd;
-}
-
-.copy small {
-    opacity: 0.8;
-}
-/* ============================
-   MOBILE RESPONSIVE FIXES
-   ============================ */
-@media (max-width: 768px) {
-
-    /* Body Padding */
-    body {
-        padding: 0 15px;
-    }
-
-    /* Header Logo / Title */
-    header h1 {
-        font-size: 1.5em;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    /* Navigation */
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    nav a {
-        display: inline-block;
-        padding: 8px 12px;
-        font-size: 1em;
-    }
-
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 20px 10px;
-    }
-
-    .hero img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .hero h2 {
-        font-size: 1.4em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    /* Cards (About, Projects, Research) */
-    .card, 
-    .pub-card {
-        width: 100%;
-        margin: 15px 0;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .card h1, .card h2 {
-        font-size: 1.4em;
-    }
-
-    .pub-title {
-        font-size: 1.1em;
-    }
-
-    .pub-authors,
-    .pub-info {
-        font-size: 0.9em;
-    }
-
-    /* Social Links */
-    .social-links a {
-        display: block;
-        margin: 5px 0;
-        font-size: 1em;
-    }
-
-    /* Footer */
-    footer {
-        font-size: 0.85em;
-        padding: 15px 0;
-        text-align: center;
-    }
-
-    /* Dark Mode Button on small screens */
-    #dark-toggle {
-        top: 10px;
-        right: 10px;
-        padding: 6px 10px;
-        font-size: 1.2em;
-    }
-}
-
-/* ============================
-   HAMBURGER MENU
-   ============================ */
-.hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Mobile Menu Hidden by Default */
-#nav-menu {
-    transition: max-height 0.3s ease;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 18px;
-    }
-
-    nav {
-        display: block;
-        width: 100%;
-        text-align: center;
-        background: #fff;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    nav.dark {
-        background: #111;
-        border-bottom: 1px solid #333;
-    }
-
-    nav a {
-        display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #eee;
-        margin: 0;
-    }
-
-    nav a.dark {
-        border-bottom: 1px solid #222;
-    }
-
-    /* Expanded state */
-    nav.open {
-        max-height: 300px;
-    }
-}
-/* ======================
-   IMPROVED HOMEPAGE HERO
-   ====================== */
-
+/* HERO SECTION */
 .hero {
     display: flex;
     justify-content: center;
@@ -419,19 +192,18 @@ footer.dark {
     animation: float 4s ease-in-out infinite;
 }
 
-/* Highlight Text */
-.highlight {
+highlight {
     color: #007bff;
     font-weight: bold;
 }
 
-.subtitle {
+subtitle {
     font-size: 1.2em;
     margin-top: 8px;
     opacity: 0.8;
 }
 
-/* Fade-in Animation */
+/* Fade / Float Animations */
 .fade-in {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -442,57 +214,123 @@ footer.dark {
     100% { opacity: 1; transform: translateY(0);}
 }
 
-/* Floating Animation */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
-/* Social Links Improved */
-.social-links a {
-    margin: 5px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    background: #f1f1f1;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    background: #e2e2e2;
-    transform: translateY(-2px);
-}
-
-/* Dark Mode Adjustments */
-.dark .highlight {
-    color: #4da3ff;
-}
-
-.dark .social-links a {
-    background: #222;
-    color: #ddd;
-}
-
-.dark .social-links a:hover {
-    background: #333;
-}
-
-/* MOBILE */
+/* MOBILE HERO */
 @media (max-width: 768px) {
     .profile-pic {
         width: 130px;
         height: 130px;
     }
-
     .hero {
         padding: 50px 15px;
     }
+}
 
-    .subtitle {
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+footer.dark {
+    color: #ddd;
+}
+
+.copy small {
+    opacity: 0.8;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+    header h1 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    nav a {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .card, .pub-card {
+        width: 100%;
+        margin: 15px 0;
+        padding: 15px;
+    }
+    .pub-title {
         font-size: 1.1em;
     }
+    #dark-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 1.2em;
+    }
 }
-/* Footer Social Icons */
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#nav-menu {
+    transition: max-height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+    }
+    nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        border-bottom: 1px solid #ddd;
+    }
+    nav.dark {
+        background: #111;
+        border-bottom: 1px solid #333;
+    }
+    nav a {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+    nav.open {
+        max-height: 300px;
+    }
+}
+
+/* FOOTER SOCIAL ICONS */
 .footer-social {
     display: flex;
     justify-content: center;
@@ -502,17 +340,16 @@ footer.dark {
 
 .footer-social .social-icon {
     font-size: 22px;
-    color: var(--text-color, #333);
+    color: #444;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .footer-social .social-icon:hover {
     transform: scale(1.2);
-    color: var(--accent-color, #0077ff);
+    color: #0077ff;
 }
 
-/* Dark mode support */
 .dark .footer-social .social-icon {
     color: #ddd;
 }
@@ -520,5 +357,3 @@ footer.dark {
 .dark .footer-social .social-icon:hover {
     color: #4da3ff;
 }
-
-
