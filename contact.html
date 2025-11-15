@@ -4,109 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Contact | Mamunur Rashid</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Dark Mode Toggle -->
-    <div id="dark-toggle">🌙</div>
+<div id="dark-toggle">🌙</div>
 
-    <!-- Header -->
-    <header>
-        <h1>Mamunur Rashid</h1>
+<header>
+    <h1>Mamunur Rashid</h1>
+    <div class="hamburger" id="hamburger">☰</div>
 
-        <div class="hamburger" id="hamburger">☰</div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="contact.html">Contact</a>
+    </nav>
+</header>
 
-        <nav id="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
+<section class="content-section fade-in">
+    <h1>Contact Me</h1>
+    <p>For collaboration, research questions, or academic inquiries, feel free to reach out.</p>
 
-    <!-- CONTENT -->
-    <section class="content-section fade-in">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out for collaborations, research, or professional inquiries.</p>
+    <div class="card">
+        <h2>Email</h2>
+        <p><strong>mrrashid.cs@gmail.com</strong></p>
+        <a href="mailto:mrrashid.cs@gmail.com" class="btn">Send Email</a>
+    </div>
 
-        <div class="card">
-            <h2>Email</h2>
-            <p><strong>mrrashid.cs@gmail.com</strong></p>
-            <a class="btn" href="mailto:mrrashid.cs@gmail.com">Send Email</a>
-        </div>
+    <div class="card">
+        <h2>Connect Online</h2>
 
-        <div class="card">
-            <h2>Social Links</h2>
-            <ul>
-                <li><a href="https://github.com/imroshid" target="_blank">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></li>
-                <li><a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a></li>
-                <li><a href="https://researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></li>
-                <li><a href="https://instagram.com/imroshid" target="_blank">Instagram</a></li>
-            </ul>
-        </div>
-    </section>
+        <ul>
+            <li><a href="https://github.com/imroshid" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a></li>
+            <li><a href="https://www.researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></li>
+            <li><a href="https://instagram.com/imroshid" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p class="copy">
-            <small>
-                © <span id="year"></span> Mamunur Rashid |
-                Powered by GitHub • Last updated on <span id="last-updated"></span>
-            </small>
-        </p>
-    </footer>
+<footer>
+    <div class="footer-social">
+        <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
+        <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
+        <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
+        <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
+    </div>
 
-    <!-- Dark Mode -->
-    <script>
-        const body = document.body;
-        const toggle = document.getElementById("dark-toggle");
+    <p class="copy">
+        <small>
+            © <span id="year"></span> Mamunur Rashid |
+            Powered by GitHub • Last updated on <span id="last-updated"></span>
+        </small>
+    </p>
+</footer>
 
-        const applyDarkMode = (on) => {
-            const method = on ? "add" : "remove";
-            body.classList[method]("dark");
+<script>
+    const body = document.body;
+    const toggle = document.getElementById("dark-toggle");
 
-            document.querySelectorAll(
-                "header, footer, nav, nav a, .card, section"
-            ).forEach(el => el.classList[method]("dark"));
+    const applyDark = (on) => {
+        const m = on ? "add" : "remove";
+        body.classList[m]("dark");
+        document.querySelectorAll("header, footer, nav, nav a, section, .card")
+              .forEach(e => e.classList[m]("dark"));
+        toggle.textContent = on ? "☀️" : "🌙";
+    };
 
-            toggle.textContent = on ? "☀️" : "🌙";
-        };
+    const saved = localStorage.getItem("dark-mode") === "on";
+    applyDark(saved);
 
-        const saved = localStorage.getItem("dark-mode") === "on";
-        applyDarkMode(saved);
+    toggle.addEventListener("click", () => {
+        const d = body.classList.contains("dark");
+        applyDark(!d);
+        localStorage.setItem("dark-mode", !d ? "on" : "off");
+    });
 
-        toggle.addEventListener("click", () => {
-            const isDark = body.classList.contains("dark");
-            applyDarkMode(!isDark);
-            localStorage.setItem("dark-mode", !isDark ? "on" : "off");
-        });
-    </script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-    <!-- Hamburger -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("nav-menu");
+    hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
+    document.querySelectorAll("#nav-menu a").forEach(a =>
+        a.addEventListener("click", () => navMenu.classList.remove("open"))
+    );
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("open");
-        });
-
-        document.querySelectorAll("#nav-menu a").forEach(link => {
-            link.addEventListener("click", () => navMenu.classList.remove("open"));
-        });
-    </script>
-
-    <!-- Auto Footer Date -->
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const updated = new Date(document.lastModified);
-        document.getElementById("last-updated").textContent =
-            updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
-    </script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const updated = new Date(document.lastModified);
+    document.getElementById("last-updated").textContent =
+        updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+</script>
 
 </body>
 </html>

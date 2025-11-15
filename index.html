@@ -3,36 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Rashid | Portfolio</title>
+    <title>Mamunur Rashid | Portfolio</title>
 
-    <!-- Icon Libraries -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
 
     <link rel="stylesheet" href="style.css">
-
-    <!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- Academicons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
-
 </head>
 
 <body>
 
-    <!-- Dark Mode Toggle -->
+    <!-- Dark Mode -->
     <div id="dark-toggle">🌙</div>
 
-    <!-- Header with Hamburger Menu -->
+    <!-- Header -->
     <header>
         <h1>Mamunur Rashid</h1>
-
-        <!-- Hamburger -->
         <div class="hamburger" id="hamburger">☰</div>
 
         <nav id="nav-menu">
-            <a href="index.html" class="active">Home</a>
+            <a class="active" href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <a href="research.html">Research</a>
@@ -40,76 +31,54 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content fade-in">
-            <img src="Moon.png" alt="Profile Photo" class="profile-pic float">
-            <h2>Hello, I'm <span class="highlight">Mamunur Rashid</span></h2>
-            <p class="subtitle">Researcher • Developer • Machine Learning Enthusiast</p>
-
+    <!-- Hero -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <img src="Moon.png" class="profile-pic" alt="Profile Photo">
+            <h2>Hello, I'm Rashid</h2>
+            <p>Welcome to my professional portfolio.</p>
         </div>
     </section>
 
     <!-- Footer -->
-<footer>
+    <footer>
 
-    <!-- Social Icons -->
-    <div class="footer-social">
-        <a href="mailto:mrrashid.cs@gmail.com" class="social-icon" target="_blank">
-            <i class="fa-regular fa-envelope"></i>
-        </a>
+        <div class="footer-social">
+            <a class="social-icon" href="mailto:mrrashid.cs@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+            <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank"><i class="ai ai-google-scholar"></i></a>
+            <a class="social-icon" href="https://linkedin.com/in/mamonurrashid" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a class="social-icon" href="https://github.com/imroshid" target="_blank"><i class="fab fa-github"></i></a>
+            <a class="social-icon" href="https://orcid.org/" target="_blank"><i class="fab fa-orcid"></i></a>
+        </div>
 
-        <a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" class="social-icon" target="_blank">
-            <i class="ai ai-google-scholar"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/mamonurrashid" class="social-icon" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="https://github.com/imroshid" class="social-icon" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-
-        <a href="https://orcid.org/" class="social-icon" target="_blank">
-            <i class="fab fa-orcid"></i>
-        </a>
-    </div>
-
-    <!-- Copyright -->
-    <p class="copy">
-        <small>
-            © <span id="year"></span> Mamunur Rashid |
-            Powered by GitHub • Last updated on <span id="last-updated"></span>
-        </small>
-    </p>
-
-</footer>
-
+        <p class="copy">
+            <small>
+                © <span id="year"></span> Mamunur Rashid |
+                Powered by GitHub • Last updated on <span id="last-updated"></span>
+            </small>
+        </p>
+    </footer>
 
     <!-- Dark Mode Script -->
     <script>
         const body = document.body;
         const toggle = document.getElementById("dark-toggle");
 
-        const applyDarkMode = (on) => {
+        const applyDark = (on) => {
             const method = on ? "add" : "remove";
             body.classList[method]("dark");
-
-            document.querySelectorAll(
-                "header, footer, nav, nav a, section, .hero, .hero-content, .social-links a"
-            ).forEach(el => el.classList[method]("dark"));
-
+            document.querySelectorAll("header, footer, nav, nav a, section, .card")
+                .forEach(el => el.classList[method]("dark"));
             toggle.textContent = on ? "☀️" : "🌙";
         };
 
         const saved = localStorage.getItem("dark-mode") === "on";
-        applyDarkMode(saved);
+        applyDark(saved);
 
         toggle.addEventListener("click", () => {
-            const currentlyDark = body.classList.contains("dark");
-            applyDarkMode(!currentlyDark);
-            localStorage.setItem("dark-mode", !currentlyDark ? "on" : "off");
+            const isDark = body.classList.contains("dark");
+            applyDark(!isDark);
+            localStorage.setItem("dark-mode", !isDark ? "on" : "off");
         });
     </script>
 
@@ -122,20 +91,17 @@
             navMenu.classList.toggle("open");
         });
 
-        // Close menu on link click (mobile only)
         document.querySelectorAll("#nav-menu a").forEach(link => {
             link.addEventListener("click", () => navMenu.classList.remove("open"));
         });
     </script>
 
-    <!-- Auto Footer Date Script -->
+    <!-- Footer Date Script -->
     <script>
-        // Year
         document.getElementById("year").textContent = new Date().getFullYear();
-        // Last Updated
         const updated = new Date(document.lastModified);
         document.getElementById("last-updated").textContent =
-            updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+            updated.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
     </script>
 
 </body>

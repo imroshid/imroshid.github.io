@@ -2,140 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>About | Mamunur Rashid</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Dark Mode Toggle -->
-    <div id="dark-toggle">🌙</div>
+<div id="dark-toggle">🌙</div>
 
-    <!-- Header with hamburger -->
-    <header>
-        <h1>Mamunur Rashid</h1>
+<header>
+    <h1>Mamunur Rashid</h1>
+    <div class="hamburger" id="hamburger">☰</div>
 
-        <div class="hamburger" id="hamburger">☰</div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-        <nav id="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<section class="content-section fade-in">
+    <div class="card">
+        <h1>About Me</h1>
+        <p>Hello! I’m <strong>Mamunur Rashid</strong> — a researcher and developer passionate about
+           Computer Science, Machine Learning, and Data Science.</p>
 
-    <!-- About Section -->
-    <section class="content-section">
-        <div class="card">
-            <h1>About Me</h1>
-            <p>Hello! I’m <strong>Mamunur Rashid</strong> — a researcher and developer
-            focused on Machine Learning, Data Science, and Computational Analysis.</p>
+        <p>I specialize in:</p>
+        <ul>
+            <li>Machine Learning & Deep Learning</li>
+            <li>Data Analysis & Scientific Research</li>
+            <li>Web Development</li>
+            <li>Academic Writing</li>
+        </ul>
 
-            <p>I specialize in:</p>
-            <ul>
-                <li>Machine Learning & Deep Learning</li>
-                <li>Data Analysis & Predictive Modeling</li>
-                <li>Web Development</li>
-                <li>Research & Technical Writing</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Social Profiles</h2>
-            <p><a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a></p>
-            <p><a href="https://www.researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></p>
-            <p><a href="https://github.com/imroshid" target="_blank">GitHub</a></p>
-            <p><a href="https://linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></p>
-            <p><a href="https://instagram.com/imroshid" target="_blank">Instagram</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-<footer>
-
-    <!-- Social Icons -->
-    <div class="footer-social">
-        <a href="mailto:mrrashid.cs@gmail.com" class="social-icon" target="_blank">
-            <i class="fa-regular fa-envelope"></i>
-        </a>
-
-        <a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" class="social-icon" target="_blank">
-            <i class="ai ai-google-scholar"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/mamonurrashid" class="social-icon" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="https://github.com/imroshid" class="social-icon" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-
-        <a href="https://orcid.org/" class="social-icon" target="_blank">
-            <i class="fab fa-orcid"></i>
-        </a>
+        <p>I focus on producing high-quality research and building meaningful digital solutions.</p>
     </div>
 
-    <!-- Copyright -->
+    <div class="card">
+        <h2>Professional Profiles</h2>
+
+        <ul>
+            <li><a href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ" target="_blank">Google Scholar</a></li>
+            <li><a href="https://www.researchgate.net/profile/Md-Mamunur-Rashid-25" target="_blank">ResearchGate</a></li>
+            <li><a href="https://github.com/imroshid" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/mamonurrashid" target="_blank">LinkedIn</a></li>
+            <li><a href="https://instagram.com/imroshid" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-social">
+        <a class="social-icon" href="mailto:mrrashid.cs@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a class="social-icon" href="https://scholar.google.com/citations?user=ZH_QBjIAAAAJ"><i class="ai ai-google-scholar"></i></a>
+        <a class="social-icon" href="https://linkedin.com/in/mamonurrashid"><i class="fab fa-linkedin"></i></a>
+        <a class="social-icon" href="https://github.com/imroshid"><i class="fab fa-github"></i></a>
+        <a class="social-icon" href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
+    </div>
+
     <p class="copy">
         <small>
             © <span id="year"></span> Mamunur Rashid |
             Powered by GitHub • Last updated on <span id="last-updated"></span>
         </small>
     </p>
-
 </footer>
 
+<script>
+    const body = document.body;
+    const toggle = document.getElementById("dark-toggle");
 
-    <!-- Dark Mode Script -->
-    <script>
-        const body = document.body;
-        const toggle = document.getElementById("dark-toggle");
+    const applyDark = (on) => {
+        const m = on ? "add" : "remove";
+        body.classList[m]("dark");
+        document.querySelectorAll("header, footer, nav, nav a, section, .card")
+              .forEach(e => e.classList[m]("dark"));
+        toggle.textContent = on ? "☀️" : "🌙";
+    };
 
-        const applyDarkMode = (on) => {
-            const method = on ? "add" : "remove";
-            body.classList[method]("dark");
-            document.querySelectorAll(
-                "header, footer, section, nav, nav a, .card, .content-section"
-            ).forEach(el => el.classList[method]("dark"));
-            toggle.textContent = on ? "☀️" : "🌙";
-        };
+    const saved = localStorage.getItem("dark-mode") === "on";
+    applyDark(saved);
 
-        const stored = localStorage.getItem("dark-mode") === "on";
-        applyDarkMode(stored);
+    toggle.addEventListener("click", () => {
+        const d = body.classList.contains("dark");
+        applyDark(!d);
+        localStorage.setItem("dark-mode", !d ? "on" : "off");
+    });
 
-        toggle.addEventListener("click", () => {
-            const isDark = body.classList.contains("dark");
-            applyDarkMode(!isDark);
-            localStorage.setItem("dark-mode", !isDark ? "on" : "off");
-        });
-    </script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-    <!-- Hamburger Script -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("nav-menu");
+    hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
+    document.querySelectorAll("#nav-menu a").forEach(a =>
+        a.addEventListener("click", () => navMenu.classList.remove("open"))
+    );
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("open");
-        });
-
-        document.querySelectorAll("#nav-menu a").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("open");
-            });
-        });
-    </script>
-
-    <!-- Auto Footer Date -->
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const updated = new Date(document.lastModified);
-        document.getElementById("last-updated").textContent =
-            updated.toLocaleDateString("en-US", {year:"numeric", month:"short", day:"numeric"});
-    </script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const updated = new Date(document.lastModified);
+    document.getElementById("last-updated").textContent =
+        updated.toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+</script>
 
 </body>
 </html>
